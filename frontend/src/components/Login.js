@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 
+const config = require("../../config.js");
+
 function Login()
 {
 
     var loginName;
     var loginPassword;
+
+    var port = config.port;
 
     const [message,setMessage] = useState('');
 
@@ -20,7 +24,7 @@ function Login()
         try
         {    
 //            const response = await fetch('http://localhost:5000/api/login',
-            const response = await fetch('http://localhost/api/login',
+            const response = await fetch('http://localhost:' + config.port + '/api/login',
                 {method:'POST',body:js,headers:{'Content-Type': 'application/json'}});
 
             var res = JSON.parse(await response.text());
