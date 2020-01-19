@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const config = require("../config.js");
+const config = require("./config.js");
 
 function Login()
 {
